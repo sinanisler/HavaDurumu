@@ -64,8 +64,8 @@ function havadurumu_getir($sehir , $istek=false){
 }
 
 // örnek kullanımlar
-havadurumu_getir("mersin","enaz");
-havadurumu_getir("adana","encok");
-havadurumu_getir("adana","hava");
+havadurumu_getir("mersin","enaz"); // 1,5,10,20  sayısal çıktı
+havadurumu_getir("adana","encok"); // 1,5,10,20  sayısal çıktı
+havadurumu_getir("adana","hava");  // Bulutlu, Yağmurlu, Açık string-kelime çıktı
 
 ?>
