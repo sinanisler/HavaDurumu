@@ -1,5 +1,14 @@
 <?php
 
+/*
+	
+	havadurumu.php Türkiye illerinin güncel havadurumu bilgilerini 
+	Meteoroloji Genel Müdürlüğünden elde edebilmeniz yazılmış ufak
+	bir kütüphanedir.
+	
+*/
+
+
 function havadurumu_getir($sehir , $istek=false){
 
 	$sehiradi = $sehir;
@@ -13,18 +22,22 @@ function havadurumu_getir($sehir , $istek=false){
 		echo $icerik1;           
 		}
 		
+		
+		// En düşük hava sıcaklığı
 	if($istek == "enaz" ){
 		$id1 = $dochtml->getElementById('ctl00_cpContent_thmMin1');
 		$icerik1 = $id1->nodeValue;
 		echo $icerik1;           
 		}
 	
+		// En yüksek hava sıcaklığı
 	if($istek == "encok"){
 		$id2 = $dochtml->getElementById('ctl00_cpContent_thmMax1');
 		$icerik2 = $id2->nodeValue;
 		echo $icerik2;           
 		}
 	
+		// Havanın ve gökyüzünün durumu
 	if($istek == "hava"){
 		$id3 = $dochtml->getElementById('ctl00_cpContent_imgHadise1');
 		$icerik3 = $id3->getAttribute('src');
@@ -50,6 +63,7 @@ function havadurumu_getir($sehir , $istek=false){
 		
 }
 
+// örnek kullanımlar
 havadurumu_getir("mersin","enaz");
 havadurumu_getir("adana","encok");
 havadurumu_getir("adana","hava");
