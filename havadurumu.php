@@ -3,8 +3,8 @@
 /*
 	
 	havadurumu.php Türkiye illerinin güncel havadurumu bilgilerini 
-	Meteoroloji Genel Müdürlüğünden elde edebilmeniz yazılmış ufak
-	bir kütüphanedir.
+	Meteoroloji Genel Müdürlüğünden elde edebilmeniz için yazılmış 
+	ufak bir kütüphanedir.
 	
 */
 
