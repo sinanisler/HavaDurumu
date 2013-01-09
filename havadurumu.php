@@ -1,3 +1,9 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hava Durumu Kütüphanesi github.com/sinanisler</title>
+</head><body>
 <?php
 
 /*
@@ -19,7 +25,7 @@ function havadurumu_getir($sehir , $istek=false){
 	if($sehir==true and $istek==false){
 		$id1 = $dochtml->getElementById('ctl00_cpContent_thmMin1');
 		$icerik1 = $id1->nodeValue;
-		echo $icerik1;           
+		return $icerik1;          
 		}
 		
 		
@@ -27,14 +33,14 @@ function havadurumu_getir($sehir , $istek=false){
 	if($istek == "enaz" ){
 		$id1 = $dochtml->getElementById('ctl00_cpContent_thmMin1');
 		$icerik1 = $id1->nodeValue;
-		echo $icerik1;           
+		return $icerik1;          
 		}
 	
 		// En yüksek hava sıcaklığı
 	if($istek == "encok"){
 		$id2 = $dochtml->getElementById('ctl00_cpContent_thmMax1');
 		$icerik2 = $id2->nodeValue;
-		echo $icerik2;           
+		return $icerik2;          
 		}
 	
 		// Havanın ve gökyüzünün durumu
@@ -43,29 +49,38 @@ function havadurumu_getir($sehir , $istek=false){
 		$icerik3 = $id3->getAttribute('src');
 		
 		switch ($icerik3) {
-			case "../FILES/imgIcon/99/a1-25x25-gif/-23.gif": echo "Çok Bulutlu"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/-25.gif": echo "Parçalı Bulutlu"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/-28.gif": echo "Az Bulutlu"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/-29.gif": echo "Açık"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/45.gif": echo "Sisli"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/61.gif": echo "Hafif Yağmurlu"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/63.gif": echo "Yağmurlu"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/65.gif": echo "Kuvvetli Yağmurlu"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/68.gif": echo "Karla Karışık Yağmurlu"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/71.gif": echo "Hafif Kar Yağışlı"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/73.gif": echo "Kar Yağışlı"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/-81.gif": echo "Sağnak Yağışlı"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/82.gif": echo "Kuvvetli Sağnak Yağışlı"; break;
-			case "../FILES/imgIcon/99/a1-25x25-gif/75.gif": echo "Yoğun Kar Yağışlı"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/-23.gif": $havadurum = "Çok Bulutlu"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/-25.gif": $havadurum = "Parçalı Bulutlu"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/-28.gif": $havadurum = "Az Bulutlu"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/-29.gif": $havadurum = "Açık"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/45.gif": $havadurum = "Sisli"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/61.gif": $havadurum = "Hafif Yağmurlu"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/63.gif": $havadurum = "Yağmurlu"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/65.gif": $havadurum = "Kuvvetli Yağmurlu"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/68.gif": $havadurum = "Karla Karışık Yağmurlu"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/71.gif": $havadurum = "Hafif Kar Yağışlı"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/73.gif": $havadurum = "Kar Yağışlı"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/-81.gif": $havadurum = "Sağnak Yağışlı"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/82.gif": $havadurum = "Kuvvetli Sağnak Yağışlı"; break;
+			case "../FILES/imgIcon/99/a1-25x25-gif/75.gif": $havadurum = "Yoğun Kar Yağışlı"; break;
 		}
+		
+		return $havadurum;
 	}
 	
 		
 }
 
 // örnek kullanımlar
-havadurumu_getir("mersin","enaz"); // 1,5,10,20  sayısal çıktı
-havadurumu_getir("adana","encok"); // 1,5,10,20  sayısal çıktı
-havadurumu_getir("adana","hava");  // Bulutlu, Yağmurlu, Açık string-kelime çıktı
+echo havadurumu_getir("mersin","enaz"); // 1,5,10,20  sayısal çıktı
+echo "<br>";
+echo havadurumu_getir("adana","encok"); // 1,5,10,20  sayısal çıktı
+echo "<br>";
+echo havadurumu_getir("adana","hava");  // Bulutlu, Yağmurlu, Açık string-kelime çıktı
 
 ?>
+
+
+
+</body>
+</html>
