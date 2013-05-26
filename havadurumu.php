@@ -23,7 +23,7 @@ function havadurumu_getir($sehir , $istek=false){
 	$dochtml->loadHTML($strhtml);
 	
 	if($sehir==true and $istek==false){
-		$id1 = $dochtml->getElementById('ctl00_cpContent_thmMin1');
+		$id1 = $dochtml->getElementById('cpContent_thmMin1');
 		$icerik1 = $id1->nodeValue;
 		return $icerik1;          
 		}
@@ -31,21 +31,21 @@ function havadurumu_getir($sehir , $istek=false){
 		
 		// En düşük hava sıcaklığı
 	if($istek == "enaz" ){
-		$id1 = $dochtml->getElementById('ctl00_cpContent_thmMin1');
+		$id1 = $dochtml->getElementById('cpContent_thmMin1');
 		$icerik1 = $id1->nodeValue;
 		return $icerik1;          
 		}
 	
 		// En yüksek hava sıcaklığı
 	if($istek == "encok"){
-		$id2 = $dochtml->getElementById('ctl00_cpContent_thmMax1');
+		$id2 = $dochtml->getElementById('cpContent_thmMax1');
 		$icerik2 = $id2->nodeValue;
 		return $icerik2;          
 		}
 	
 		// Havanın ve gökyüzünün durumu
 	if($istek == "hava"){
-		$id3 = $dochtml->getElementById('ctl00_cpContent_imgHadise1');
+		$id3 = $dochtml->getElementById('cpContent_imgHadise1');
 		$icerik3 = $id3->getAttribute('src');
 		
 		switch ($icerik3) {
