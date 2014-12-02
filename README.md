@@ -15,4 +15,8 @@ echo havadurumu_getir("adana","hava");
 
 ## Demo
 
-http://sinanisler.com/demo/HavaDurumu/
+http://www.sinanisler.com/demo/HavaDurumu/
+
+
+
+[wordpress](http://www.sinanisler.com/)
