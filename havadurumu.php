@@ -15,6 +15,7 @@
 */
 
 
+
 function havadurumu_getir($sehir , $istek=false){
 
 	$sehiradi = $sehir;
